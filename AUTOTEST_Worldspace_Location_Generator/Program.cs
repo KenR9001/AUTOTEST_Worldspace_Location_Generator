@@ -173,7 +173,7 @@ class Program
 
             int x = x1;
             int y = y1;
-            if (!strictMode)
+            if (!strictMode && !useSingleCoordinate)
             {
                 x = x + 2;
                 while (x > x2)
@@ -192,7 +192,8 @@ class Program
 
                 Console.WriteLine("\"" + worldspace + "/" + x.ToString() + "/" + y.ToString() + "\"");
                 outputList[outputList.Length - 1] = "\"" + worldspace + "/" + x.ToString() + "/" + y.ToString() + "\"";
-
+                if (useSingleCoordinate)
+                    break;
                 if (!strictMode)
                 {
                     if (x + 3 > x2)
